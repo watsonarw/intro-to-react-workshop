@@ -13,7 +13,7 @@ class MessageForm extends React.Component {
 
   render() {
     return (
-      <div className="col-md-6">
+      <div className="col-md-10">
         <form className="container-fluid">
           <Input
             title={'Message'}

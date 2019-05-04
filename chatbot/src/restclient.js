@@ -15,7 +15,6 @@ function post(url = '', data) {
 async function get(url, cb) {
   const response = await fetch(url, {
     method: 'GET',
-    mode: 'no-cors',
     accept: 'application/json'
   });
   const response_1 = await checkStatus(response);
