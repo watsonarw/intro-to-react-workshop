@@ -11,7 +11,7 @@ const Input = props => {
         id={props.name}
         name={props.name}
         type={props.type}
-        defaultValue={props.value}
+        value={props.value}
         onChange={props.handlechange}
         placeholder={props.placeholder}
         // {...props}

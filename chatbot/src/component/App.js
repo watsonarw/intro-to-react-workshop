@@ -11,9 +11,8 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="col-md-6">
+      <div>
         <h1 className="App-header">Intro to React Workshop</h1>
-        {/* <h3>Intro to React Workshop</h3> */}
         <MessageForm />
       </div>
     );
