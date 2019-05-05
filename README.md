@@ -166,3 +166,18 @@ The next step is reading data (which is easier than sending it). If we don't get
 4. Our `Message` component will be a `div`, it will have a `p` for the message, a `h5` for the author. We'll pass in `message` and `author` from props.
 
 5. In our `ChatRoom` component, we want to render a `Message` component for each message. We can use `messages.map((message) => (<Message />))` for this (passing the correct props).
+
+---
+
+### Extracting components
+
+Our codebase is looking like a bit of a mess. It might make sense to clean it up a bit
+Recommended components to extract:
+
+  `NewMessageSection`
+
+  The fields for creating a new message. The new message section can also take the `sendMessage` function and handlers with it, and the styling for the new message section should live with the component (e.g. in `NewMessageSection.css`)
+
+  `MessageList`
+
+  The list of new messages. Can also include the logic for getting messages from the API. We didn't style this section yet either, so we can do that too
