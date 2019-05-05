@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Chatbot - A React App",
+  "name": "Intro to React using create-react-app",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,7 +1,6 @@
 import React from 'react';
 import Input from './Input';
 import Button from './Button';
-import RestClient from '../restclient';
 
 class MessageForm extends React.Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class MessageForm extends React.Component {
 
   render() {
     return (
-      <div className="col-md-10">
+      <div className="col-xs-3 col-md-5">
         <form className="container-fluid">
           <Input
             title={'Message'}
@@ -22,15 +21,13 @@ class MessageForm extends React.Component {
               this.setState({ newMessage: event.target.value })
             }
           />
-          <Button title={'Send'} action={e => this.sendmessage(e)} />
+          <Button
+            title={'Send'}
+            action={e => this.props.handler(e, this.state.newMessage)}
+          />
         </form>
       </div>
     );
-  }
-
-  sendmessage(event) {
-    event.preventDefault();
-    RestClient.post('https://chatapi.site/messages', this.state.newMessage);
   }
 }
 
