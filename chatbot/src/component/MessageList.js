@@ -8,7 +8,7 @@ class MessageList extends React.Component {
         <div className="media-body">
           <h5 className="mt-0 mb-1">{item.message}</h5>
           {item.user} at{' '}
-          <Moment toNow format="HH:mm DD/MM/YYYY " date={item.timeStamp} />
+          <Moment format="HH:mm DD/MM/YYYY ">{item.timestamp}</Moment>
         </div>
       </div>
     );
