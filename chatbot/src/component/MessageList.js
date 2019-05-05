@@ -16,7 +16,7 @@ class MessageList extends React.Component {
   render() {
     return (
       <div className="col-xs-9 col-md-7">
-        <h5 className="card-title">Chat room</h5>
+        <h4 className="card-title">Chat room</h4>
         {this.props.entries.map(this.createEntry)}
       </div>
     );

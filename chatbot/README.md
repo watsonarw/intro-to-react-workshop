@@ -1,4 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Learn React.js using a real-world chat app.
+
+Note: This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## About the app
+
+This project is a simple chat app using React.js as frontend and Nodejs as the backend.
+
+[Node JS api](https://github.com/watsonarw/super-simple-chat/blob/master/README.md) is hosted in AWS serverless resource.
+
+API URL: https://chatapi.site/messages
+
+User can send messages to the api server and receive them.
 
 ## Available Scripts
 

@@ -13,7 +13,7 @@ class MessageForm extends React.Component {
   render() {
     return (
       <div className="col-xs-3 col-md-5">
-        <form className="container-fluid">
+        <form>
           <Input
             title={'Message'}
             placeholder={'Enter your message here!'}
