@@ -181,3 +181,22 @@ Recommended components to extract:
   `MessageList`
 
   The list of new messages. Can also include the logic for getting messages from the API. We didn't style this section yet either, so we can do that too
+
+---
+
+## Useful links
+
+### React
+
+- React docs: https://reactjs.org/
+- Official react tutorial: https://reactjs.org/tutorial/tutorial.html
+- Video tutorials about react: https://egghead.io/browse/frameworks/react
+- Some more project ideas: https://daveceddia.com/your-own-react-project-ideas/
+- React developer tools for your browser: https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html
+
+### Styling
+- Styled-components: https://www.styled-components.com/
+- Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+### Modern Javascript
+- MDN Javascript, Html, CSS docs: https://developer.mozilla.org/
