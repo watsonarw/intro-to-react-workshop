@@ -17,17 +17,14 @@ class App extends React.Component {
     this.getMessages();
   }
 
-  getMessages(mes) {
-    console.log(mes + ' received');
-    restclient.get('https://chatapi.site/messages', data => {
-      this.setState({ messages: data.messages });
-    });
+  async getMessages() {
+    const response = await restclient.get('https://chatapi.site/messages');
+    this.setState({ messages: response.messages });
   }
 
-  sendmessage(event, msg) {
+  async sendmessage(event, msg) {
     event.preventDefault();
-    restclient.post('https://chatapi.site/messages', msg);
-    console.log(msg + ' received');
+    await restclient.post('https://chatapi.site/messages', msg);
   }
 
   render() {
