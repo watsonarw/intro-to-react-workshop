@@ -27,7 +27,7 @@
 
     Keyboard shortcut: ``Ctrl + ` ``
 
-3. In the terminal run the command `npx create-react-app myApp`
+3. In the terminal run the command `npx create-react-app myapp`
 
     This will download half the internet and setup a "hello world" react app
 
