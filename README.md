@@ -110,7 +110,6 @@ This state goes away when we refresh the page, so it's not very useful. What we 
       "user": "We passed this in via props"
     }
     ```
-    And header: `Content-Type: application/json`
 
 2. Use `fetch` to send the message:
 
@@ -120,9 +119,6 @@ This state goes away when we refresh the page, so it's not very useful. What we 
     {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
     }
     ```
     You can use `result.ok` to check if the response was successful, and `await response.json()` to read the response body (for debugging).

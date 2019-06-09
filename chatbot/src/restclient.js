@@ -2,9 +2,6 @@ async function post(url = '', data) {
   const messageobj = JSON.stringify({ message: data, user: 'Isha' });
   return fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
     body: messageobj
   })
     .then(checkStatus);
@@ -12,8 +9,7 @@ async function post(url = '', data) {
 
 async function get(url) {
   const response = await fetch(url, {
-    method: 'GET',
-    accept: 'application/json'
+    method: 'GET'
   }).then(checkStatus);
   return await parseJSON(response);
 }
