@@ -31,7 +31,7 @@
 
     This will download half the internet and setup a "hello world" react app
 
-4.  `cd myApp`
+4.  `cd myapp`
 5.  `npm start`
 
 Congratulations, you've created your first react app!
