@@ -104,7 +104,7 @@ This state goes away when we refresh the page, so it's not very useful. What we 
     We want to `POST` the data to an endpoint (and luckily we've created one for you)
 
     `POST https://chatapi.site/messages`
-    expects the following JSON payload:
+    expects the following JSON payload (and will fail if it doesn't get it):
     ```json
     {
       "message": "This message should come from the textarea",
@@ -128,6 +128,8 @@ This state goes away when we refresh the page, so it's not very useful. What we 
     ```
     You can use `result.ok` to check if the response was successful, and `await response.json()` to read the response body (for debugging).
 
+    _Your browser's developer tools can show you what was sent, and what was received_
+
 You can now write a react app, with styling, and send data to an API.
 
 ---
@@ -136,12 +138,28 @@ You can now write a react app, with styling, and send data to an API.
 
 The next step is reading data (which is easier than sending it). If we don't get here, you can do this in your own time.
 
-1. Create another `section` in the `ChatRoom` for showing the existing messages. This is going to show a list of messages, rendered as components
-2. In our `ChatRoom` component, add a `componentDidMount` method that will fetch the messages from `https://chatapi.site/messages` and set the `messages` from the response in state.
+1. Create a new `Message` component in `src/Message.js`
+2. Our `Message` component will be a `div`, it will have a `p` for the message, a `h5` for the author. We'll pass in `message` and `author` from props.
+
+3. Create another `section` in the `ChatRoom` for showing the existing messages. This is going to show a list of messages, rendered as components
+4. In our `ChatRoom` component, we want to render a `Message` component for each message. We can use `messages.map` for this (passing the correct props). It should look something like:
+
+
+```jsx
+<section>
+  <h3>Messages:</h3>
+  { this.state.messages.map((message) =>
+    (<Message message={message} />)
+  )}
+</section>
+```
+
+5. We need to fetch the messages from the API! In our `ChatRoom` component, add a `componentDidMount` method that will fetch the messages from `https://chatapi.site/messages` and set the `messages` from the response in state.
 
     Use fetch again, it should look something like
+
     ```js
-    const getMessages = async () => {
+    getMessages = async () => {
       const response = await fetch('https://chatapi.site/messages');
       const responseJson = await response.json();
 
@@ -151,22 +169,15 @@ The next step is reading data (which is easier than sending it). If we don't get
         throw new Error(`Failed to fetch messages: ${responseJson}`);
       }
     }
-    ```
 
-    with
-    ```js
     componentDidMount = async () => {
-      const messages = await getMessages();
+      const messages = await this.getMessages();
       this.setState({ messages: messages });
     }
     ```
 
-    Don't forget to add `messages: []` to the initial state.
+    _Don't forget to add `messages: []` to the initial state._
 
-3. Create a new `Message` component in `src/Message.js`
-4. Our `Message` component will be a `div`, it will have a `p` for the message, a `h5` for the author. We'll pass in `message` and `author` from props.
-
-5. In our `ChatRoom` component, we want to render a `Message` component for each message. We can use `messages.map((message) => (<Message />))` for this (passing the correct props).
 
 ---
 
