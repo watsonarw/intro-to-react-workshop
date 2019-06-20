@@ -60,10 +60,11 @@ Congratulations, you've created your first react app!
 We're building a chatroom, let's start with sending messages
 
 1. We're building a `ChatRoom`, let's make a new component in `src/ChatRoom.js`
-2. All components need to have 1 "root component", and can have other components inside. Let's create the root.
+2. All components need to have 1 "root element", and can have other elements inside. Let's create a `div` for the root.
 3. Add a heading for the chatroom e.g. `My Chat room`
 4. Add a `section` for the new message, `label`, `textarea` and `button`
-5. It looks terrible, let's add some css in `src/ChatRoom.css` and import it.
+5. Export the `ChatRoom` component and import it into `App`.
+6. It looks terrible, let's add some style to it.
 
     _Note: normally we wouldn't add styles this way, because it gets difficult to manage as the app grows. There are libraries like `styled-components` which help with this, we'll have some links at the end if you want to learn more_
 
@@ -116,9 +117,13 @@ This state goes away when we refresh the page, so it's not very useful. What we 
     Use an `async function`, this will be cleanest easiest.
     The `options` argument you'll have to pass to `fetch` will look something like:
     ```js
-    {
-      method: 'POST',
-      body: JSON.stringify(data),
+    sendMessage = async () => {
+      let data = { user: this.props.name, message: this.state.message };
+      await fetch('https://chatapi.site/messages',
+      {
+        method: 'POST',
+        body: JSON.stringify(data),
+      });
     }
     ```
     You can use `result.ok` to check if the response was successful, and `await response.json()` to read the response body (for debugging).
